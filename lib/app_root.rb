@@ -1,6 +1,17 @@
-class AppRoot
+module AppRoot
   class << self
     attr_writer :default_path
+
+    def find_with_flag(flag)
+      find_root_with_flag(flag, called_from)
+    end
+    alias_method :path, :find_with_flag
+
+    def included(base)
+      base.extend(ClassMethods)
+    end
+
+    private
 
     def called_from
       File.dirname(
@@ -31,10 +42,17 @@ class AppRoot
 
       Pathname.new(File.realpath(root))
     end
+  end
 
-    def find_with_flag(flag)
-      find_root_with_flag(flag, called_from)
+  module ClassMethods
+    def root
+      AppRoot.find_with_flag(root_flag)
     end
-    alias_method :path, :find_with_flag
+
+    private
+
+    def root_flag
+      raise(NotImplementedError, "You must implement #{self}.#{__method__}")
+    end
   end
 end

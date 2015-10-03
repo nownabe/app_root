@@ -18,11 +18,35 @@ Or install it yourself as:
     $ gem install app_root
 
 ## Usage
+### Basic Usage
 ```ruby
 require "app_root"
 
 puts AppRoot.path("config.ru")
 #=> /path/to/your/application/root
+```
+
+### Integrate Your App
+Using AppRoot.path:
+
+```ruby
+class MyApp
+  def self.root
+    AppRoot.path("config.ru")
+  end
+end
+```
+
+Including AppRoot:
+
+```ruby
+class MyApp
+  include AppRoot
+
+  def self.root_flag
+    "config.ru"
+  end
+end
 ```
 
 ## Development

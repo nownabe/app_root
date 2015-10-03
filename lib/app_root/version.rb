@@ -1,3 +1,3 @@
-class AppRoot
+module AppRoot
   VERSION = "0.1.0"
 end
