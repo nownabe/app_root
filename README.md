@@ -22,6 +22,7 @@ Or install it yourself as:
 require "app_root"
 
 puts AppRoot.path("config.ru")
+#=> /path/to/your/application/root
 ```
 
 ## Development
