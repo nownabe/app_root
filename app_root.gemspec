@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["nownabe"]
   spec.email         = ["nownabe@gmail.com"]
 
-  spec.summary       = %q{Detect the application root directory}
+  spec.summary       = %q{Detect the application's root directory}
   spec.homepage      = "https://github.com/nownabe/app_root"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
