@@ -1,4 +1,6 @@
 # AppRoot
+[![Gem Version](https://badge.fury.io/rb/app_root.svg)](https://badge.fury.io/rb/app_root)
+
 Detect the application's root directory.
 
 ## Installation
