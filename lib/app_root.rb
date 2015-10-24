@@ -7,10 +7,6 @@ module AppRoot
     end
     alias_method :path, :find_with_flag
 
-    def included(base)
-      base.extend(ClassMethods)
-    end
-
     private
 
     def called_from
@@ -41,18 +37,6 @@ module AppRoot
         end
 
       Pathname.new(File.realpath(root))
-    end
-  end
-
-  module ClassMethods
-    def root
-      AppRoot.find_with_flag(root_flag)
-    end
-
-    private
-
-    def root_flag
-      raise(NotImplementedError, "You must implement #{self}.#{__method__}")
     end
   end
 end

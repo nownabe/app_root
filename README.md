@@ -39,18 +39,6 @@ class MyApp
 end
 ```
 
-Including AppRoot:
-
-```ruby
-class MyApp
-  include AppRoot
-
-  def self.root_flag
-    "config.ru"
-  end
-end
-```
-
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
